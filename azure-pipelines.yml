@@ -40,7 +40,7 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   environment:
-    name: 'Transport-web'
+    name: 'azure-devops-test'
     resourceType: VirtualMachine
   strategy:
     runOnce:
