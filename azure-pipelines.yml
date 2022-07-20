@@ -38,7 +38,7 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   environment:
-    name: <environment name>
+    name: 'Transport-web'
     resourceType: VirtualMachine
   strategy:
     runOnce:
