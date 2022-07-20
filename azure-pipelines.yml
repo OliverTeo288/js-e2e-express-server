@@ -37,25 +37,25 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
 
-- stage: Deploy
-  displayName: Web deployment
-  dependsOn: Build
-  condition: succeeded()
-  jobs:
-  - deployment: Deploy
-    displayName: Deploy
-    pool:
-      vmImage: 'ubuntu-latest'
-    environment:
-      name: 'Azure Devops Test VM'
-      resourceType: VirtualMachine
-    strategy:
-      runOnce:
-        preDeploy:
-          steps:
-          - download: current
-            artifact: drop
-          - script: echo initialize, cleanup, backup, install certs
-        deploy:
-          steps:
-          - script: npm start
+# - stage: Deploy
+#   displayName: Web deployment
+#   dependsOn: Build
+#   condition: succeeded()
+#   jobs:
+#   - deployment: Deploy
+#     displayName: Deploy
+#     pool:
+#       vmImage: 'ubuntu-latest'
+#     environment:
+#       name: 'Azure Devops Test VM'
+#       resourceType: VirtualMachine
+#     strategy:
+#       runOnce:
+#         preDeploy:
+#           steps:
+#           - download: current
+#             artifact: drop
+#           - script: echo initialize, cleanup, backup, install certs
+#         deploy:
+#           steps:
+#           - script: npm start
