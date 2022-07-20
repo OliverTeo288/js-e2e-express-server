@@ -1,1 +1,1 @@
-echo "Starting deployment script run" && cd /VSTSAgent/_work/r3/a/_OliverTeo288_js-e2e-express-server && sudo npm install && sudo pm2 start src/index.js && sudo pm2 startup systemd &&  echo "End of script run"
+echo "Starting deployment script run" && cd /VSTSAgent/_work/r3/a/_OliverTeo288_js-e2e-express-server && sudo npm install && sudo pm2 delete all && sudo pm2 start src/index.js && sudo pm2 startup systemd &&  echo "End of script run"
