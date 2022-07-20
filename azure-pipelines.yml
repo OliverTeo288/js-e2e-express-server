@@ -36,7 +36,7 @@ jobs:
     artifact: drop
 
 - deployment: VMDeploy
-  displayName: web
+  displayName: Web deployment
   pool:
     vmImage: 'ubuntu-latest'
   environment:
@@ -44,6 +44,11 @@ jobs:
     resourceType: VirtualMachine
   strategy:
     runOnce:
+      preDeploy:
+        steps:
+        - download: current
+          artifact: drop
+        - script: echo initialize, cleanup, backup, install certs
       deploy:
         steps:
         - script: echo my first deployment
