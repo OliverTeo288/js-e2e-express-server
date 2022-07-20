@@ -47,7 +47,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     environment:
-      name: 'azure-devops-test'
+      name: 'Azure Devops Test VM'
       resourceType: VirtualMachine
     strategy:
       runOnce:
