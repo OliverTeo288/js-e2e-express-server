@@ -58,4 +58,4 @@ stages:
           - script: echo initialize, cleanup, backup, install certs
         deploy:
           steps:
-          - script: echo my first deployment
+          - script: npm start
